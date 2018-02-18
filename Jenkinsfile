@@ -17,7 +17,7 @@ node {
     stage('Test image') {
         /* Start up the image and run a basic script to test the app */
         app.run("-it -p 8000:8000")
-        sh 'test.sh'
+        sh 'sh test.sh'
         app.stop
     }
     stage('CLI workaround') {
