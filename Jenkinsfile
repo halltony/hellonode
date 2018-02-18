@@ -18,9 +18,8 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
-        app.inside {
-            sh 'echo "Tests passed"'
-        }
+        app.run("-it -p 8000:8000")
+        sh 'test.sh'
     }
     stage('CLI workaround') {
       /* Workaround to address issue with credentials stored in Jenkins not
