@@ -15,11 +15,10 @@ node {
     }
 
     stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
-
+        /* Start up the image and run a basic script to test the app */
         app.run("-it -p 8000:8000")
         sh 'test.sh'
+        app.stop
     }
     stage('CLI workaround') {
       /* Workaround to address issue with credentials stored in Jenkins not
