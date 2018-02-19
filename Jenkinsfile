@@ -3,23 +3,22 @@ node {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-
         checkout scm
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
         app = docker.build("halltony/hellonode")
     }
 
     stage('Test image') {
         /* Start up the image and run a basic script to test the app */
         app.run("-it -p 8000:8000")
-        sh 'sh test.sh'
+        sh 'test.sh'
         app.stop
     }
+
     stage('CLI workaround') {
       /* Workaround to address issue with credentials stored in Jenkins not
        * being passed correctly to the docker registry
