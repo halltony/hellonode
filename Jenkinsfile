@@ -1,9 +1,9 @@
 pipeline {
-    agent RHEL7 build node
+    agent { any }
     stages {
-        stage('Test') {
+        stage('stage') {
             steps {
-                sh 'pwd' 
+                sh 'pwd'
             }
         }
     }
