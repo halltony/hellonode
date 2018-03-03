@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent RHEL7 build node
     stages {
         stage('Test') {
             steps {
