@@ -1,8 +1,13 @@
 pipeline {
-    agent {rhel}
+    agent none 
     stages {
-        stage('stage') {
+        stage('Example Build') {
+            agent 
+            node {
+                label 'rhel'
+                 }   
             steps {
+                echo 'Hello, Maven'
                 sh 'pwd'
             }
         }
