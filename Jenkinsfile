@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Show version') {
             steps {
-                cat version.txt
+                sh 'cat version.txt'
             }
         }
         stage('Deploy') {
