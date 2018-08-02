@@ -1,12 +1,7 @@
 pipeline {
-    agent none 
+    agent any
     stages {
         stage('shell command') {
-            agent { 
-                node {
-                    label 'rhel'
-                }       
-            }
             steps {
                 sh 'pwd'
             }
