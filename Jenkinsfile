@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 sh 'cat version.txt'
-                echo ${BRANCH_NAME}
+                echo "${BRANCH_NAME}"
             }
         }
     }
