@@ -1,1 +1,1 @@
-Version: Master:0.6
+Version: Release:0.6
